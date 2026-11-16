@@ -1,0 +1,84 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="PintorDelapenaKimSummative.Admin.Admin" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Shoppiling mo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Orbitron:wght@400..900&family=Raleway:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+    <link href="../styles.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            color: #FFFFFF;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <!-- Header -->
+        <div class="navbar" runat="server">
+            <div class="userinfo">
+                <strong>
+                <asp:Label ID="lblUsername" 
+                    runat="server" CssClass="auto-style1"></asp:Label>
+                </strong>
+                <asp:Label ID="lblMembership" 
+                    runat="server" 
+                    CssClass="lblMembership" 
+                    Font-Size="10pt"></asp:Label>
+            </div>
+            <div class="nav">
+                <asp:Menu ID="navbar" runat="server" 
+                    Orientation="Horizontal" 
+                    RenderingMode="List" 
+                    StaticSubMenuIndent="16px" OnMenuItemClick="navbar_MenuItemClick">
+                    <Items>
+                        <asp:MenuItem Text="Home" Value="Home">
+                        </asp:MenuItem>
+                        <asp:MenuItem 
+                            Text="View Products" 
+                            Value="View Products" 
+                            NavigateUrl="~/Admin/Products.aspx">
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Users" 
+                            Value="Users" 
+                            NavigateUrl="~/Admin/Users.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Transactions" 
+                            Value="Transactions" 
+                            NavigateUrl="~/Admin/Transactions.aspx"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Main/Logout.aspx" 
+                            Text="Logout" Value="Logout">
+                        </asp:MenuItem>
+                    </Items>
+                    <LevelMenuItemStyles>
+                        <asp:MenuItemStyle Font-Underline="False" 
+                            HorizontalPadding="10px" 
+                            ItemSpacing="10px" />
+                    </LevelMenuItemStyles>
+                    <StaticHoverStyle ForeColor="Gray" />
+                    <StaticMenuItemStyle ForeColor="#666666" />
+                    <StaticSelectedStyle ForeColor="#FF9933" />
+                </asp:Menu>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="maincontent">
+            <hr />
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <hr />
+            <div><span id="creators">Created By: Gabriel Pintor, Ashton Delapena, Young Hoon Kim</span>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

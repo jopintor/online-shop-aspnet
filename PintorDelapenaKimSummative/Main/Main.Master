@@ -1,0 +1,67 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="PintorDelapenaKimSummative.Main.Main" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Shoppiling mo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Orbitron:wght@400..900&family=Raleway:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+    <link href="../styles.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            color: #CCFF99;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <!-- Header -->
+        <div class="navbar" runat="server">
+            <div class="nav">
+                <asp:Menu ID="navbar" runat="server" 
+                    Orientation="Horizontal" 
+                    RenderingMode="List" 
+                    StaticSubMenuIndent="16px" CssClass="auto-style1">
+                    <Items>
+                        <asp:MenuItem Text="Home" Value="Home" 
+                            NavigateUrl="~/Main/Home.aspx">
+                        </asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Main/Register.aspx" 
+                            Text="Register" Value="Register">
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Login" 
+                            Value="Login" 
+                            NavigateUrl="~/Main/Login.aspx"></asp:MenuItem>
+                    </Items>
+                    <LevelMenuItemStyles>
+                        <asp:MenuItemStyle Font-Underline="False" 
+                            HorizontalPadding="10px" 
+                            ItemSpacing="10px" />
+                    </LevelMenuItemStyles>
+                    <StaticHoverStyle ForeColor="Gray" />
+                    <StaticMenuItemStyle ForeColor="#666666" />
+                    <StaticSelectedStyle ForeColor="#FF9933" />
+                </asp:Menu>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="maincontent">
+            <hr />
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <hr />
+            <div><span id="creators">Created By: Gabriel Pintor, Ashton Delapena, Young Hoon Kim</span>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
